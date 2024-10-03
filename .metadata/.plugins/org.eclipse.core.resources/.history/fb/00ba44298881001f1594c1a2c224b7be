@@ -19,8 +19,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "software_timer.h"
-#include "display7seg.h"
+
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
@@ -97,44 +96,12 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   setTimer(0, 1000);
   setTimer(1, 1000);
-  setTimer(2, 250);
   int hour = 15, minute = 8, second = 50;
   extern int timer_flag[10];
-  extern int index_led;
-  extern const int MAX_LED;
   while (1)
   {
     /* USER CODE END WHILE */
-	if(timer_flag[0] == 1){
-		HAL_GPIO_TogglePin(LED_RED_GPIO_Port, LED_RED_Pin);
-		HAL_GPIO_TogglePin(DOT_GPIO_Port, DOT_Pin);
-		setTimer(0, 1000);
-	}
 
-	if(timer_flag[1] == 1){
-		second++;
-		if(second >= 60){
-			second = 0;
-			minute++;
-		}
-		if(minute >= 60){
-			minute = 0;
-			hour++;
-		}
-		if(hour >= 24){
-			hour = 0;
-		}
-		updateClockBuffer(hour, minute);
-		setTimer(1, 1000);
-	}
-
-	if(timer_flag[2] == 1){
-		update7SEG(index_led++);
-		if(index_led == MAX_LED){
-			index_led = 0;
-		}
-		setTimer(2, 250);
-	}
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
