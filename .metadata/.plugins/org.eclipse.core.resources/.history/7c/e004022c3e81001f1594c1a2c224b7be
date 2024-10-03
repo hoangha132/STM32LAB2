@@ -20,7 +20,6 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "display7seg.h"
-#include "software_timer.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
@@ -95,15 +94,24 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  setTimer(0, 1000);
-  extern int timer_flag[10];
+  int hour = 15, minute = 8, second = 50;
   while (1)
   {
     /* USER CODE END WHILE */
-	if(timer_flag[0] == 1){
-		HAL_GPIO_TogglePin(LED_RED_GPIO_Port, LED_RED_Pin );
-		setTimer(0, 2000);
-	}
+	  second++;
+	  if (second >= 60){
+		  second = 0;
+		  minute++;
+	  }
+	  if (minute >= 60){
+		  minute = 0;
+		  hour++;
+	  }
+	  if (hour >= 24){
+		  hour = 0;
+	  }
+	  updateClockBuffer(hour, minute);
+	  HAL_Delay(1000);
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
@@ -231,8 +239,28 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+extern const int MAX_LED;
+extern int index_led;
+extern int led_buffer[4];
+int status = 0;
+int seg_counter = 25;
+int led_counter = 100;
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim ){
-	timerRun();
+	seg_counter--;
+	if(seg_counter <= 0){
+		seg_counter = 25;
+		update7SEG(index_led++);
+	}
+	if(index_led == MAX_LED){
+		index_led = 0;
+	}
+
+	led_counter--;
+	if(led_counter <= 0){
+		led_counter = 100;
+		HAL_GPIO_TogglePin(LED_RED_GPIO_Port, LED_RED_Pin);
+		HAL_GPIO_TogglePin(DOT_GPIO_Port, DOT_Pin);
+	}
 }
 /* USER CODE END 4 */
 
