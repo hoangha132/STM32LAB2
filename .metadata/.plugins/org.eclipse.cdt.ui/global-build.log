@@ -1,24 +1,4 @@
-arm-none-eabi-gcc -o "lab2_src.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\VXL\GIT_STM32_LAB2\lab2_src\STM32F103C6UX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lab2_src.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: lab2_src.elf
- 
-arm-none-eabi-size   lab2_src.elf 
-arm-none-eabi-objdump -h -S  lab2_src.elf  > "lab2_src.list"
-arm-none-eabi-objcopy  -O ihex  lab2_src.elf  "lab2_src.hex"
-arm-none-eabi-objcopy  -O binary  lab2_src.elf  "lab2_src.bin"
-   text	   data	    bss	    dec	    hex	filename
-   7744	     24	   1648	   9416	   24c8	lab2_src.elf
-Finished building: default.size.stdout
- 
-Finished building: lab2_src.bin
-Finished building: lab2_src.hex
- 
-Finished building: lab2_src.list
- 
- 
-
-16:11:51 Build Finished. 0 errors, 0 warnings. (took 3s.223ms)
-
-16:11:52 **** Incremental Build of configuration Debug for project lab2_src ****
+21:04:48 **** Incremental Build of configuration Debug for project lab2_src ****
 make -j4 all 
 arm-none-eabi-size   lab2_src.elf 
    text	   data	    bss	    dec	    hex	filename
