@@ -100,8 +100,8 @@ int main(void)
   setTimer(2, 250);
   int hour = 15, minute = 8, second = 50;
   extern int timer_flag[10];
-  int index_led = 0;
-  const int MAX_LED = 4;
+  extern int index_led = 0;
+  extern const int MAX_LED = 4;
   while (1)
   {
     /* USER CODE END WHILE */
