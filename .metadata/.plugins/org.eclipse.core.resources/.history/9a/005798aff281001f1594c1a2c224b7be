@@ -19,7 +19,7 @@ void timerRun(){
 	for(int i=0; i < 10; i++){
 		if(timer_count[i] > 0){
 			timer_count[i]--;
-			if(timer_count[i] <= 0){
+			if(timer_count <= 0){
 				timer_flag[i] = 1;
 			}
 		}
