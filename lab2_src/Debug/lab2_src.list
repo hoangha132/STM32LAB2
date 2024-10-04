@@ -844,7 +844,7 @@ static void MX_GPIO_Init(void)
 
 /* USER CODE BEGIN 4 */
 int status = 0;
-int seg_counter = 50;
+int seg_counter = 100;
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim ){
  800063c:	b580      	push	{r7, lr}
  800063e:	b082      	sub	sp, #8
@@ -861,9 +861,9 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim ){
  8000650:	681b      	ldr	r3, [r3, #0]
  8000652:	2b00      	cmp	r3, #0
  8000654:	dc2b      	bgt.n	80006ae <HAL_TIM_PeriodElapsedCallback+0x72>
-		seg_counter = 50;
+		seg_counter = 100;
  8000656:	4b18      	ldr	r3, [pc, #96]	; (80006b8 <HAL_TIM_PeriodElapsedCallback+0x7c>)
- 8000658:	2232      	movs	r2, #50	; 0x32
+ 8000658:	2264      	movs	r2, #100	; 0x64
  800065a:	601a      	str	r2, [r3, #0]
 		switch(status){
  800065c:	4b17      	ldr	r3, [pc, #92]	; (80006bc <HAL_TIM_PeriodElapsedCallback+0x80>)
