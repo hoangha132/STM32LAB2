@@ -5,3 +5,6 @@ arm-none-eabi-size   Lab1_demo.elf
    6980	     44	   1572	   8596	   2194	Lab1_demo.elf
 Finished building: default.size.stdout
  
+
+06:58:10 Build Finished. 0 errors, 0 warnings. (took 228ms)
+
