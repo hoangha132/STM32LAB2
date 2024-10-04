@@ -243,12 +243,12 @@ static void MX_GPIO_Init(void)
 
 /* USER CODE BEGIN 4 */
 int status = 0;
-int seg_counter = 100;
+int seg_counter = 50;
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim ){
 	seg_counter--;
 	if(seg_counter <= 0){
-		seg_counter = 100;
-		HAL_GPIO_TogglePin(LED_RED_GPIO_Port, LED_RED_Pin);
+		seg_counter = 50;
+		HAL_GPIO_TogglePin(DOT_GPIO_Port, DOT_Pin);
 		switch(status){
 		case 0:
 			HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, GPIO_PIN_RESET);
