@@ -1,0 +1,3 @@
+#include "exercise9.h"
+
+void clearNumberOnClock(int num);

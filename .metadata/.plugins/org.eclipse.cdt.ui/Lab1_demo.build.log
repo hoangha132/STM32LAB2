@@ -1,10 +1,24 @@
-06:58:10 **** Incremental Build of configuration Debug for project Lab1_demo ****
+11:01:21 **** Incremental Build of configuration Debug for project Lab1_demo ****
 make -j4 all 
+arm-none-eabi-gcc "../Core/Src/exercise10.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/exercise10.d" -MT"Core/Src/exercise10.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/exercise10.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Lab1_demo.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\VXL\demo\STM32_Lab1\STM32F103C6UX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab1_demo.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab1_demo.elf
+ 
 arm-none-eabi-size   Lab1_demo.elf 
+arm-none-eabi-objdump -h -S  Lab1_demo.elf  > "Lab1_demo.list"
+arm-none-eabi-objcopy  -O ihex  Lab1_demo.elf  "Lab1_demo.hex"
    text	   data	    bss	    dec	    hex	filename
-   6980	     44	   1572	   8596	   2194	Lab1_demo.elf
+   5424	     20	   1580	   7024	   1b70	Lab1_demo.elf
+arm-none-eabi-objcopy  -O binary  Lab1_demo.elf  "Lab1_demo.bin"
 Finished building: default.size.stdout
  
+Finished building: Lab1_demo.bin
+Finished building: Lab1_demo.list
+Finished building: Lab1_demo.hex
+ 
+ 
+ 
 
-06:58:10 Build Finished. 0 errors, 0 warnings. (took 228ms)
+11:01:22 Build Finished. 0 errors, 0 warnings. (took 880ms)
 
