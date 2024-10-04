@@ -901,8 +901,8 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim ){
  80006a2:	f44f 7100 	mov.w	r1, #512	; 0x200
  80006a6:	483f      	ldr	r0, [pc, #252]	; (80007a4 <HAL_TIM_PeriodElapsedCallback+0x164>)
  80006a8:	f000 fc24 	bl	8000ef4 <HAL_GPIO_WritePin>
-			display7seg(0);
- 80006ac:	2000      	movs	r0, #0
+			display7seg(1);
+ 80006ac:	2001      	movs	r0, #1
  80006ae:	f7ff fd4d 	bl	800014c <display7seg>
 			status = 1;
  80006b2:	4b3b      	ldr	r3, [pc, #236]	; (80007a0 <HAL_TIM_PeriodElapsedCallback+0x160>)
@@ -931,8 +931,8 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim ){
  80006dc:	f44f 7100 	mov.w	r1, #512	; 0x200
  80006e0:	4830      	ldr	r0, [pc, #192]	; (80007a4 <HAL_TIM_PeriodElapsedCallback+0x164>)
  80006e2:	f000 fc07 	bl	8000ef4 <HAL_GPIO_WritePin>
-			display7seg(1);
- 80006e6:	2001      	movs	r0, #1
+			display7seg(2);
+ 80006e6:	2002      	movs	r0, #2
  80006e8:	f7ff fd30 	bl	800014c <display7seg>
 			status = 2;
  80006ec:	4b2c      	ldr	r3, [pc, #176]	; (80007a0 <HAL_TIM_PeriodElapsedCallback+0x160>)
@@ -961,8 +961,8 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim ){
  8000716:	f44f 7100 	mov.w	r1, #512	; 0x200
  800071a:	4822      	ldr	r0, [pc, #136]	; (80007a4 <HAL_TIM_PeriodElapsedCallback+0x164>)
  800071c:	f000 fbea 	bl	8000ef4 <HAL_GPIO_WritePin>
-			display7seg(2);
- 8000720:	2002      	movs	r0, #2
+			display7seg(3);
+ 8000720:	2003      	movs	r0, #3
  8000722:	f7ff fd13 	bl	800014c <display7seg>
 			status = 3;
  8000726:	4b1e      	ldr	r3, [pc, #120]	; (80007a0 <HAL_TIM_PeriodElapsedCallback+0x160>)
@@ -991,8 +991,8 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim ){
  8000750:	f44f 7100 	mov.w	r1, #512	; 0x200
  8000754:	4813      	ldr	r0, [pc, #76]	; (80007a4 <HAL_TIM_PeriodElapsedCallback+0x164>)
  8000756:	f000 fbcd 	bl	8000ef4 <HAL_GPIO_WritePin>
-			display7seg(3);
- 800075a:	2003      	movs	r0, #3
+			display7seg(0);
+ 800075a:	2000      	movs	r0, #0
  800075c:	f7ff fcf6 	bl	800014c <display7seg>
 			status = 0;
  8000760:	4b0f      	ldr	r3, [pc, #60]	; (80007a0 <HAL_TIM_PeriodElapsedCallback+0x160>)
