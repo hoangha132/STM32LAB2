@@ -101,8 +101,8 @@ void display7seg(int num){
 		  }
 }
 
-const int MAX_LED = 4;
-int index_led = 0;
+const int MAX_LED;
+int index_led;
 int led_buffer [4] = {1, 2, 3, 4};
 void update7SEG (int index)
 {
